@@ -10,6 +10,19 @@
   clear:both;
 }*/
 
-.menucontainer{
+/*.menucontainer{
   float:right;
+}*/
+
+.backgroundImg {
+  max-width: 100vw;
+  height: 1500px;
+  background-image: url(http://bebravebebold.com/wp-content/uploads/2012/12/IMG_2058.jpg);
+  background-repeat: no-repeat;
+  align-self: stretch;
+  background-size: contain;
+}
+
+.btn {
+  font-size: 20px;
 }

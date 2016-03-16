@@ -1,6 +1,7 @@
 <!doctype html>
 
 <html lang="en" ng-app='restaurantObjects'>
+
 <head>
   <meta charset="utf-8">
 
@@ -13,6 +14,7 @@
   <!--[if lt IE 9]>
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.js"></script>
   <script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.js'>
   </script>
 
@@ -26,53 +28,62 @@
 
 <body ng-controller='restaurantController as RC'>
 
-<div class="container">
-  <nav>
+
+    <header>
+    <nav>
       <div class="nav-wrapper">
         <a href="#" class="brand-logo center">Logo</a>
-        <ul id="nav-mobile" class="left hide-on-med-and-down">
-          <li><a href="sass.html">Sass</a></li>
-          <li><a href="badges.html">Components</a></li>
-          <li><a href="collapsible.html">JavaScript</a></li>
-        </ul>
       </div>
     </nav>
+  </header>
 
-    <div class="subContainer">
+  <main>
+    <div class="row backgroundImg">
+      <!-- <img class="responsive-img" src="http://bebravebebold.com/wp-content/uploads/2012/12/IMG_2058.jpg" /> -->
 
-        <div class="inCart s4">
+      <div class="inCart col s4">
+        <div class="purchased">
+          <h4>Your Current Order</h4>
+          <div class="menuContainer col s8">
+            <h4>Menu</h4>
 
+            <div ng-repeat="P in RC.No1.orderArray" class="card small col s4">
+              <div class="card-image waves-effect waves-block waves-light">
+                <img ng-src={{P.photo}}>
+              </div>
+              <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4">{{P.name}}<button class="btn waves-effect waves-light" ng-click="RC.addPlate(P)" type="submit" name="action">Add To Cart</button></span>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
 
-          <div class="menuContainer s8 container">
-            <div class="card small col s4">
-               <div class="card-image waves-effect waves-block waves-light">
-                 <img class="activator" src="http://www.puregoodness.net/wp-content/uploads/2011/02/guac.jpg">
-               </div>
-               <div class="card-content">
-                 <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
-                 <p><a href="#">This is a link</a></p>
-               </div>
-               <div class="card-reveal">
-                 <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                 <p>Here is some more information about this product that is only revealed once clicked on.</p>
-               </div>
+      <div class="menuContainer col s8">
+        <h4>Menu</h4>
 
-           </div>
+        <div ng-repeat="P in RC.boMenu.menuArray" class="card small col s4">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img ng-src={{P.photo}}>
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">{{P.name}}<button class="btn waves-effect waves-light" ng-click="RC.addPlate(P)" type="submit" name="action">Add To Cart</button></span>
+          </div>
         </div>
+      </div>
 
 
-   </div>
-   <footer>
+    </div>
+  </main>
+    <footer>
 
-   </footer>
-
-</div>
+    </footer>
 
 
 
   <script src="app.js"></script>
 </body>
+
 </html>
 
 
