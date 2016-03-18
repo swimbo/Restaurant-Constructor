@@ -47,12 +47,12 @@
           <div class="menuContainer col s8">
             <h4>Menu</h4>
 
-            <div ng-repeat="P in RC.No1.orderArray" class="card small col s4">
+            <div id="menuCard" ng-repeat="P in RC.No1.orderArray track by $index" class="card small col s4">
               <div class="card-image waves-effect waves-block waves-light">
                 <img ng-src={{P.photo}}>
               </div>
               <div class="card-content">
-                <span class="card-title activator grey-text text-darken-4">{{P.name}}<button class="btn waves-effect waves-light" ng-click="RC.addPlate(P)" type="submit" name="action">Add To Cart</button></span>
+                <span class="card-title activator grey-text text-darken-4">{{P.name}}<button class="btn waves-effect waves-light" ng-click="RC.removePlate(P)" type="submit" name="action">Remove</button></span>
               </div>
             </div>
           </div>

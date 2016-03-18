@@ -64,6 +64,12 @@
     //  Function to push a plate onto the order array when button is clicked
     RC.addPlate = function(plate){
       RC.No1.orderArray.push(plate)
+      console.log(RC.No1)
+    }
+
+    RC.removePlate = function(plate){
+      RC.No1.orderArray.pop(plate)
+      console.log(RC.No1)
     }
     //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
     // All prototype functions that turn the objects built by our constructors into a coherent string
@@ -185,7 +191,7 @@
 
     RC.guacamolePlate = new Plate('Guillermo\'s Guac', 'The great green guac to put in the gut bomb', 10, [RC.bacon, RC.potato, RC.hotPocket], "http://www.puregoodness.net/wp-content/uploads/2011/02/guac.jpg")
 
-    RC.margaritaDrink = new DrinkItem('Mamma\'s Margarita', 'Be warned, Mamma likes her booze', 9, [RC.bacon, RC.potato, RC.hotPocket, RC.coke], "http://s3-media3.fl.yelpcdn.com/bphoto/vpB04tTNpxq-ZLQzdGt5tg/348s.jpg")
+    RC.margaritaDrink = new DrinkItem('Mamma\'s Marg', 'Be warned, Mamma likes her booze', 9, [RC.bacon, RC.potato, RC.hotPocket, RC.coke], "http://s3-media3.fl.yelpcdn.com/bphoto/vpB04tTNpxq-ZLQzdGt5tg/348s.jpg")
 console.log(RC.margaritaDrink.photo);
 
     RC.lunchSpecial = new Plate('Glutenful Special', 'Bread, bread and more bread', 19, [RC.bacon, RC.potato, RC.hotPocket], "http://graphics8.nytimes.com/images/2015/10/28/health/well_moldy/well_moldy-tmagArticle.jpg")
